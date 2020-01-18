@@ -2,15 +2,15 @@
 
 <html>
 
-<head>
+	<head>
 
-<meta charset="utf-8">
+		<meta charset="utf-8">
 
-<title>小林同学的网页</title>
+		<title>小林同学的网页</title>
 
-<script>
+		<script>
 
-function displayDate(){
+			function displayDate(){
 
 document.getElementById("demo").innerHTML=Date();
 
@@ -18,9 +18,9 @@ document.getElementById("demo").innerHTML=Date();
 
 </script>
 
-<style>
+		<style>
 
-.lin
+			.lin
 
 {
 
@@ -40,83 +40,79 @@ border-radius:25px;
 
 </style>
 
-</head>
+	</head>
 
-<body>
-<div>
-    <input type="text" id="sid" placeholder="请输入房间号"/><br>
-    <input type="text" id="nickname" placeholder="请输入昵称"/><br>
-    <input type="submit" value="连接" onclick="connect()" /><br>
-    <textarea rows="3" cols="20" id="content"></textarea><br>
-    <input type="submit" value="发送" onclick="start()" />
-    <br>
-</div>
-<div id="messages"></div>
-<script type="text/javascript">
+	<body>
+		<div>
+			<input type="text" id="sid" placeholder="请输入房间号" /><br>
+			<input type="text" id="nickname" placeholder="请输入昵称" /><br>
+			<input type="submit" value="连接" onclick="connect()" /><br>
+			<textarea rows="3" cols="20" id="content"></textarea><br>
+			<input type="submit" value="发送" onclick="start()" />
+			<br>
+		</div>
+		<div id="messages"></div>
+		<script type="text/javascript">
+			var webSocket = null;
 
-    var webSocket = null;
+			function onMessage(event) {
+				document.getElementById('messages').innerHTML += '<br />' + event.data;
+			}
 
-    function onMessage(event) {
-        document.getElementById('messages').innerHTML
-            += '<br />' + event.data;
-    }
+			function onOpen(event) {
+				document.getElementById('messages').innerHTML = 'Connection established';
+			}
 
-    function onOpen(event) {
-        document.getElementById('messages').innerHTML
-            = 'Connection established';
-    }
+			function onError(event) {
+				alert("发生错误");
+			}
 
-    function onError(event) {
-        alert("发生错误");
-    }
+			function onClose(event) {
+				alert("连接关闭");
+			}
 
-    function onClose(event) {
-        alert("连接关闭");
-    }
+			function connect() {
+				var sid = document.getElementById('sid').value;
+				var nickname = document.getElementById('nickname').value;
+				if (url == '' || nickname == '') {
+					alert("房间号和用户名不能为空");
+					return;
+				}
+				var serverHot = window.location.host;
+				var url = 'ws://' + serverHot + '/groupChat/' + sid + '/' + nickname;
+				webSocket = new WebSocket(url);
+				webSocket.onerror = function(event) {
+					onError(event)
+				};
 
-    function connect() {
-        var sid = document.getElementById('sid').value;
-        var nickname = document.getElementById('nickname').value;
-        if (url == '' || nickname == '') {
-            alert("房间号和用户名不能为空");
-            return;
-        }
-        var serverHot =  window.location.host;
-        var url = 'ws://' + serverHot + '/groupChat/' + sid + '/' + nickname;
-        webSocket = new WebSocket(url);
-        webSocket.onerror = function(event) {
-            onError(event)
-        };
+				webSocket.onopen = function(event) {
+					onOpen(event)
+				};
 
-        webSocket.onopen = function(event) {
-            onOpen(event)
-        };
+				webSocket.onmessage = function(event) {
+					onMessage(event)
+				};
 
-        webSocket.onmessage = function(event) {
-            onMessage(event)
-        };
+				webSocket.onclose = function(event) {
+					onClose(event)
+				};
+			}
 
-        webSocket.onclose = function(event) {
-            onClose(event)
-        };
-    }
-
-    function start() {
-        var text = document.getElementById('content').value;
-        webSocket.send(text);
-        document.getElementById('content').value = '';
-    }
-
-</script>
+			function start() {
+				var text = document.getElementById('content').value;
+				webSocket.send(text);
+				document.getElementById('content').value = '';
+			}
+		</script>
 
 
-<div class="lin">
+		<div class="lin">
 
-<h2 id="demo">小林同学的网页</h2>
+			<h2 id="demo">小林同学的网页</h2>
 
 
 
-<button type="button" onclick="displayDate()">显示日期</button>
+			<button type="button" onclick="displayDate()">显示日期</button>
 
 
 
@@ -128,20 +124,20 @@ border-radius:25px;
 
 
 
-</div>
+		</div>
 
-<h1>
-<a href="https://github.com/15642875149">我的GitHub主页</a>
-</h1>
-  <h1>
-<a href="https://me.csdn.net/qq_45552989">我的CSDN主页</a>
-</h1>
-<h1>我的微信二维码</h1>        
+		<h1>
+			<a href="https://github.com/15642875149">我的GitHub主页</a>
+		</h1>
+		<h1>
+			<a href="https://me.csdn.net/qq_45552989">我的CSDN主页</a>
+		</h1>
+		<h1>我的微信二维码</h1>
 
-<img src="WeiXin.png" alt="我的微信二维码">
-<a href="Browser.apk">推荐使用此浏览器访问，浏览器下载链接<a>
+		<img src="WeiXin.png" alt="我的微信二维码">
+		<a href="Browser.apk">推荐使用此浏览器访问，浏览器下载链接<a>
 
 
-</body>
+	</body>
 
 </html>
