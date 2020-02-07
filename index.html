@@ -1,143 +1,474 @@
 <!DOCTYPE html>
-
 <html>
-
 	<head>
-
-		<meta charset="utf-8">
-
-		<title>小林同学的网页</title>
-
-		<script>
-
-			function displayDate(){
-
-document.getElementById("demo").innerHTML=Date();
-
-}
-
-</script>
-
+		<title>浏览器</title>
+		<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+		<script src="https://hm.baidu.com/hm.js?058d1e446dd338b69f2e385ba2f930f2"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BM8WXEWW3P"></script>
+		<meta charset="utf-8"/>
 		<style>
+			span {
+				font-size: 1rem;
+				vertical-align: baseline;
+				margin-left: 20px;
+			}
+			input {
+				border: none;
+				border-bottom: #666666 2px solid;
+				padding: 1px 0 0 0;
+				margin: 0px 20px 0 20px;
+		        vertical-align: baseline;
+				font-size: 1rem;
+				background: #f8f8f8;
+				color: #333333;
+				text-align: center;
+				min-width: 20%;
+			}
+			button {
+				border: 0;
+				padding: 5px 15px 5px 15px;
+				margin: 0;
+				vertical-align: top;
+				font-size: 0.75rem;
+				background: #454545;
+				color: #efefef;
+			}
+			@media screen and (max-width: 1024px) {
+	html {
+		font-size: 2vw;
+		color: #333333;
+	}
 
-			.lin
+	body {
+		margin: 0;
+	}
 
-{
+	#主体 {
+		border: 2px solid #333333;
+		margin: 6px;
+		padding: 6px;
+		background: #f8f8f8;
+	}
 
-width:750px;
+	#标题 {
+		font-size: 3rem;
+		line-height: 3rem;
+		text-align: center;
+	}
 
-height:500px;
+	#主题 {
+		text-align: center;
+		margin-top: 6px;
+		font-size: 0px;
+	}
 
-background-color:yellow;
+	#主题 span {
+		font-size: 2rem;
+		vertical-align: baseline;
+		margin-left: 6px;
+	}
 
-box-shadow: 10px 10px 5px #888888;
+	#主题 input {
+		border: none;
+		border-bottom: #666666 2px solid;
+		padding: 1px 0 0 0;
+		margin: 0px 6px 0 6px;
+		vertical-align: baseline;
+		font-size: 2rem;
+		background: #f8f8f8;
+		color: #333333;
+		text-align: center;
+		min-width: 20%;
+	}
 
-border:2px solid;
+	#主题 button {
+		border: 0;
+		padding: 3px 7px 3px 7px;
+		margin: 0;
+		vertical-align: top;
+		font-size: 1.4rem;
+		background: #454545;
+		color: #efefef;
+	}
 
-border-radius:25px;
+	#文章 div {
+		margin-top: 6px;
+		font-size: 2rem;
+		text-align: justify;
+	}
 
+	#声明 {
+		float: left;
+		margin: 0 0 0 6px;
+	}
+
+	#声明 p {
+		margin: 0 0 3px 3px;
+		font-size: 1.4rem;
+	}
+
+	#声明文字 {
+		display: none;
+	}
+
+	#页脚 {
+		margin: 6px;
+	}
+
+	#页脚 p {
+		margin: 3px;
+		font-size: 1.4rem;
+		text-align: right;
+	}
+
+	.链接 {
+		color: #666666;
+	}
+
+	.图标 {
+		height: 1rem;
+		width: 1rem;
+		vertical-align: top;
+		margin-top: 2px;
+	}
+}
+html {
+		font-size: 2vw;
+		color: #333333;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	#主体 {
+		border: 2px solid #333333;
+		margin: 6px;
+		padding: 6px;
+		background: #f8f8f8;
+	}
+
+	#标题 {
+		font-size: 3rem;
+		line-height: 3rem;
+		text-align: center;
+	}
+
+	#主题 {
+		text-align: center;
+		margin-top: 6px;
+		font-size: 0px;
+	}
+
+	#主题 span {
+		font-size: 2rem;
+		vertical-align: baseline;
+		margin-left: 6px;
+	}
+
+	#主题 input {
+		border: none;
+		border-bottom: #666666 2px solid;
+		padding: 1px 0 0 0;
+		margin: 0px 6px 0 6px;
+		vertical-align: baseline;
+		font-size: 2rem;
+		background: #f8f8f8;
+		color: #333333;
+		text-align: center;
+		min-width: 20%;
+	}
+
+	#主题 button {
+		border: 0;
+		padding: 3px 7px 3px 7px;
+		margin: 0;
+		vertical-align: top;
+		font-size: 1.4rem;
+		background: #454545;
+		color: #efefef;
+	}
+
+	#文章 div {
+		margin-top: 6px;
+		font-size: 2rem;
+		text-align: justify;
+	}
+
+	#声明 {
+		float: left;
+		margin: 0 0 0 6px;
+	}
+
+	#声明 p {
+		margin: 0 0 3px 3px;
+		font-size: 1.4rem;
+	}
+
+	#声明文字 {
+		display: none;
+	}
+
+	#页脚 {
+		margin: 6px;
+	}
+
+	#页脚 p {
+		margin: 3px;
+		font-size: 1.4rem;
+		text-align: right;
+	}
+
+	.链接 {
+		color: #666666;
+	}
+
+	.图标 {
+		height: 1rem;
+		width: 1rem;
+		vertical-align: top;
+		margin-top: 2px;
+	}
+@media screen and (min-width: 1024px) {
+	html {
+		font-size: 1.3vw;
+		color: #333333;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	#主体 {
+		border: 2px solid #333333;
+		margin: 20px;
+		padding: 20px;
+		background: #f8f8f8;
+	}
+
+	#标题 {
+		font-size: 1.9rem;
+		line-height: 1.9rem;
+		text-align: center;
+	}
+
+	#主题 {
+		text-align: center;
+		margin-top: 20px;
+		font-size: 0px;
+	}
+
+	#主题 span {
+		font-size: 1rem;
+		vertical-align: baseline;
+		margin-left: 20px;
+	}
+
+	#主题 input {
+		border: none;
+		border-bottom: #666666 2px solid;
+		padding: 1px 0 0 0;
+		margin: 0px 20px 0 20px;
+		vertical-align: baseline;
+		font-size: 1rem;
+		background: #f8f8f8;
+		color: #333333;
+		text-align: center;
+		min-width: 20%;
+	}
+
+	#主题 button {
+		border: 0;
+		padding: 5px 15px 5px 15px;
+		margin: 0;
+		vertical-align: top;
+		font-size: 0.75rem;
+		background: #454545;
+		color: #efefef;
+	}
+
+	#文章 div {
+		margin-top: 20px;
+		text-align: justify;
+	}
+
+	#声明 {
+		float: left;
+		margin: 0 0 0 20px;
+	}
+
+	#声明 p {
+		margin: 0 0 5px 5px;
+		font-size: 0.75rem;
+	}
+
+	#声明文字 {
+		display: none;
+	}
+
+	#页脚 {
+		margin: 20px;
+	}
+
+	#页脚 p {
+		margin: 5px;
+		font-size: 0.75rem;
+		text-align: right;
+	}
+
+	.链接 {
+		color: #666666;
+	}
+
+	#页脚 span {
+		padding: 2px 0 0 0;
+		vertical-align: baseline;
+	}
+
+	.图标 {
+		height: 0.7rem;
+		width: 0.7rem;
+		vertical-align: top;
+		margin-top: 4px;
+	}
 }
 
-</style>
+.lin {
 
-	</head>
+	padding: 2px 0 0 0;
+	vertical-align: baseline;
+	height: 500px;
 
-	<body>
-		<div>
-			<input type="text" id="sid" placeholder="请输入房间号" /><br>
-			<input type="text" id="nickname" placeholder="请输入昵称" /><br>
-			<input type="submit" value="连接" onclick="connect()" /><br>
-			<textarea rows="3" cols="20" id="content"></textarea><br>
-			<input type="submit" value="发送" onclick="start()" />
-			<br>
-		</div>
-		<div id="messages"></div>
-		<script type="text/javascript">
-			var webSocket = null;
+	background-color: yellow;
 
-			function onMessage(event) {
-				document.getElementById('messages').innerHTML += '<br />' + event.data;
-			}
+	box-shadow: 10px 10px 5px #888888;
 
-			function onOpen(event) {
-				document.getElementById('messages').innerHTML = 'Connection established';
-			}
+	border: 2px solid;
 
-			function onError(event) {
-				alert("发生错误");
-			}
+	border-radius: 25px;
 
-			function onClose(event) {
-				alert("连接关闭");
-			}
+}
+html {
+		font-size: 1.3vw;
+		color: #333333;
+	}
 
-			function connect() {
-				var sid = document.getElementById('sid').value;
-				var nickname = document.getElementById('nickname').value;
-				if (url == '' || nickname == '') {
-					alert("房间号和用户名不能为空");
-					return;
-				}
-				var serverHot = window.location.host;
-				var url = 'ws://' + serverHot + '/groupChat/' + sid + '/' + nickname;
-				webSocket = new WebSocket(url);
-				webSocket.onerror = function(event) {
-					onError(event)
-				};
+	body {
+		margin: 0;
+	}
 
-				webSocket.onopen = function(event) {
-					onOpen(event)
-				};
+	#主体 {
+		border: 2px solid #333333;
+		margin: 20px;
+		padding: 20px;
+		background: #f8f8f8;
+	}
 
-				webSocket.onmessage = function(event) {
-					onMessage(event)
-				};
+	#标题 {
+		font-size: 1.9rem;
+		line-height: 1.9rem;
+		text-align: center;
+	}
 
-				webSocket.onclose = function(event) {
-					onClose(event)
-				};
-			}
+	#主题 {
+		text-align: center;
+		margin-top: 20px;
+		font-size: 0px;
+	}
 
-			function start() {
-				var text = document.getElementById('content').value;
-				webSocket.send(text);
-				document.getElementById('content').value = '';
+	#主题 span {
+		font-size: 1rem;
+		vertical-align: baseline;
+		margin-left: 20px;
+	}
+
+	#主题 input {
+		border: none;
+		border-bottom: #666666 2px solid;
+		padding: 1px 0 0 0;
+		margin: 0px 20px 0 20px;
+		vertical-align: baseline;
+		font-size: 1rem;
+		background: #f8f8f8;
+		color: #333333;
+		text-align: center;
+		min-width: 20%;
+	}
+
+	#主题 button {
+		border: 0;
+		padding: 5px 15px 5px 15px;
+		margin: 0;
+		vertical-align: top;
+		font-size: 0.75rem;
+		background: #454545;
+		color: #efefef;
+	}
+
+	#文章 div {
+		margin-top: 20px;
+		text-align: justify;
+	}
+
+	#声明 {
+		float: left;
+		margin: 0 0 0 20px;
+	}
+
+	#声明 p {
+		margin: 0 0 5px 5px;
+		font-size: 0.75rem;
+	}
+
+	#声明文字 {
+		display: none;
+	}
+
+	#页脚 {
+		margin: 20px;
+	}
+
+	#页脚 p {
+		margin: 5px;
+		font-size: 0.75rem;
+		text-align: right;
+	}
+
+	.链接 {
+		color: #666666;
+	}
+
+	#页脚 span {
+		padding: 2px 0 0 0;
+		vertical-align: baseline;
+	}
+
+	.图标 {
+		height: 0.7rem;
+		width: 0.7rem;
+		vertical-align: top;
+		margin-top: 4px;
+	}
+		</style>
+		<script>
+			function 访问(){
+				var add = document.getElementById('add');
+				var 网址 = add.value;
+				window.location.href = "https://"+网址;
 			}
 		</script>
-
-
-		<div class="lin">
-
-			<h2 id="demo">小林同学的网页</h2>
-
-
-
-			<button type="button" onclick="displayDate()">显示日期</button>
-
-
-
-
-
-
-
-
-
-
-
+	</head>
+	<body>
+		<div id="主体">                 
+			<div id="标题">浏览器</div>
+			<div id="主题">
+				<span>网址</span>
+				<input type="text" id="add"></input>
+				<button onclick="访问()">访问</button>
+			</div>
 		</div>
-
-		<h1>
-			<a href="https://github.com/15642875149">我的GitHub主页</a>
-		</h1>
-		<h1>
-			<a href="https://me.csdn.net/qq_45552989">我的CSDN主页</a>
-		</h1>
-		<h1>我的微信二维码</h1>
-
-		<img src="WeiXin.png" alt="我的微信二维码">
-		<a href="Browser.apk">推荐使用此浏览器访问，浏览器下载链接<a>
-
-
+		<div id="页脚">
+		</div>
 	</body>
-
 </html>
