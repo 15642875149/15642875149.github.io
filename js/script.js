@@ -366,3 +366,6 @@ function hack(){
 function liou(){
 	window.location.href = '/page5.html'
 }
+function blog(){
+        window.location.href = '/blog/'
+}
