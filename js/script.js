@@ -367,5 +367,5 @@ function liou(){
 	window.location.href = '/page5.html'
 }
 function blog(){
-        window.location.href = '/blog/'
+        window.location.href = 'http://blog.linyvhan.top/'
 }
