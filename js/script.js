@@ -369,3 +369,6 @@ function liou(){
 function blog(){
         window.location.href = 'http://blog.linyvhan.top/'
 }
+function pl(){
+        window.location.href = '/page6.html'
+}
